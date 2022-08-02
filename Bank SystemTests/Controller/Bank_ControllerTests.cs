@@ -116,6 +116,7 @@ namespace Bank_System.Controller.Tests
             Assert.AreEqual(result[1].AccountDto.Balance, (prevBalance2 - 64.23));
         }
 
+        [TestMethod()]
         public void TransferTest_Fails_Insufficient_Funds_Transfer()
         {
             List<Bank_Dto> bankDtos = new List<Bank_Dto>();
@@ -140,6 +141,7 @@ namespace Bank_System.Controller.Tests
             Assert.AreEqual(result.AccountDto.Balance, (prevBalance - 400.65));
         }
 
+        [TestMethod()]
         public void WithdrawTest_Fails_Insufficient_Funds_Withdrawl()
         {
             var prevBalance = bank_Dto1.AccountDto.Balance;
@@ -148,6 +150,7 @@ namespace Bank_System.Controller.Tests
             Assert.AreNotEqual(result.AccountDto.Balance, (prevBalance - 400.65));
         }
 
+        [TestMethod()]
         public void WithdrawTest_Fails_Limit_Withdrawl()
         {
             var prevBalance = bank_Dto1.AccountDto.Balance;
